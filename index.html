@@ -2,7 +2,7 @@
 layout: null
 ---
 <!doctype html>
-<html lang="{{ site.lang }}" data-theme="{{ site.default_theme | default: 'halloween' }}">
+<html lang="{{ site.lang }}">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,28 +12,47 @@ layout: null
   <meta name="apple-mobile-web-app-title" content="{{ site.short_title | default: site.title }}">
   <link rel="apple-touch-icon" href="{{ '/apple-touch-icon.png' | relative_url }}?v={{ site.time | date: '%s' }}">
   <link rel="icon" type="image/png" href="{{ '/apple-touch-icon.png' | relative_url }}">
-  <script>
-    // Apply the saved theme before the page draws, so it doesn't flash.
-    try {
-      var t = JSON.parse(localStorage.getItem("todo.theme"));
-      if (t) document.documentElement.setAttribute("data-theme", t);
-    } catch (e) {}
-  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Creepster&family=Lobster&family=Mountains+of+Christmas:wght@700&display=swap">
+  <script>
+    // Pick this month's theme before the page draws, so it doesn't flash.
+    // To preview another month, add ?month=6 (1-12) to the address.
+    (function () {
+      var THEMES = [
+        { name: "winter",       emoji: "❄️", color: "#e8f2fc", font: "Snowburst+One" },             // Jan
+        { name: "valentine",    emoji: "💖", color: "#fff0f4", font: "Pacifico" },                  // Feb
+        { name: "spring",       emoji: "🐣", color: "#fffbe6", font: "Fredoka:wght@600" },          // Mar
+        { name: "wildflowers",  emoji: "🌼", color: "#f4f8ee", font: "Satisfy" },                   // Apr
+        { name: "mayday",       emoji: "🌹", color: "#fbf3e6", font: "Bebas+Neue" },                // May
+        { name: "pride",        emoji: "🏳️‍🌈", color: "#faf7ff", font: "Fredoka:wght@700" },          // Jun
+        { name: "july",         emoji: "🇺🇸", color: "#e6f5fc", font: "Alfa+Slab+One" },             // Jul
+        { name: "beach",        emoji: "🏖️", color: "#dff4f7", font: "Shrikhand" },                 // Aug
+        { name: "autumn",       emoji: "🍂", color: "#f8eee2", font: "Caveat+Brush" },              // Sep
+        { name: "halloween",    emoji: "🎃", color: "#1b1026", font: "Creepster" },                 // Oct
+        { name: "thanksgiving", emoji: "🦃", color: "#fbf1e3", font: "Lobster" },                   // Nov
+        { name: "christmas",    emoji: "🎄", color: "#143f30", font: "Mountains+of+Christmas:wght@700" } // Dec
+      ];
+      var month = new Date().getMonth();
+      var forced = /[?&]month=(\d{1,2})/.exec(location.search);
+      if (forced && +forced[1] >= 1 && +forced[1] <= 12) month = +forced[1] - 1;
+      else forced = null;
+      var t = THEMES[month];
+      document.documentElement.setAttribute("data-theme", t.name);
+      document.querySelector('meta[name="theme-color"]').setAttribute("content", t.color);
+      var font = document.createElement("link");
+      font.rel = "stylesheet";
+      font.href = "https://fonts.googleapis.com/css2?family=" + t.font + "&display=swap";
+      document.head.appendChild(font);
+      window.TODO_THEME = { theme: t, month: month, forced: !!forced };
+    })();
+  </script>
   <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}?v={{ site.time | date: '%s' }}">
 </head>
 <body>
 
   <main class="screen">
     <header>
-      <h1><span id="theme-emoji">🎃</span> {{ site.title }}</h1>
-      <div class="theme-switch" role="group" aria-label="Theme">
-        <button type="button" data-theme-choice="halloween" aria-label="Halloween theme" aria-pressed="false">🎃</button>
-        <button type="button" data-theme-choice="thanksgiving" aria-label="Thanksgiving theme" aria-pressed="false">🦃</button>
-        <button type="button" data-theme-choice="christmas" aria-label="Christmas theme" aria-pressed="false">🎄</button>
-      </div>
+      <h1><span id="theme-emoji" aria-hidden="true"></span> <span class="title-text">{{ site.title }}</span></h1>
     </header>
 
     <button type="button" id="new-btn" class="new-btn">+ New To Do</button>

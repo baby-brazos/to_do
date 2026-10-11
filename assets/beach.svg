@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="260" height="260" viewBox="0 0 260 260">
+  <!-- beach umbrella -->
+  <g transform="translate(22 30)">
+    <line x1="40" y1="20" x2="52" y2="84" stroke="#8a5a3a" stroke-opacity="0.5" stroke-width="3" stroke-linecap="round"/>
+    <path d="M0 30 A40 30 0 0 1 80 10 Z" fill="#ef5b3f" fill-opacity="0.45"/>
+    <path d="M27 21 A40 30 0 0 1 40 13 L40 20 Z M53 13 A40 30 0 0 1 66 12 L40 20 Z" fill="#ffffff" fill-opacity="0.9"/>
+  </g>
+  <g stroke="#f2b705" stroke-opacity="0.55" stroke-width="3" stroke-linecap="round"><line x1="224.0" y1="56.0" x2="233.0" y2="56.0"/><line x1="220.8" y1="68.0" x2="228.6" y2="72.5"/><line x1="212.0" y1="76.8" x2="216.5" y2="84.6"/><line x1="200.0" y1="80.0" x2="200.0" y2="89.0"/><line x1="188.0" y1="76.8" x2="183.5" y2="84.6"/><line x1="179.2" y1="68.0" x2="171.4" y2="72.5"/><line x1="176.0" y1="56.0" x2="167.0" y2="56.0"/><line x1="179.2" y1="44.0" x2="171.4" y2="39.5"/><line x1="188.0" y1="35.2" x2="183.5" y2="27.4"/><line x1="200.0" y1="32.0" x2="200.0" y2="23.0"/><line x1="212.0" y1="35.2" x2="216.5" y2="27.4"/><line x1="220.8" y1="44.0" x2="228.6" y2="39.5"/></g>
+  <circle cx="200" cy="56" r="17" fill="#ffc93c" fill-opacity="0.6"/>
+  <polygon points="62.0,178.0 66.7,189.5 79.1,190.4 69.6,198.5 72.6,210.6 62.0,204.0 51.4,210.6 54.4,198.5 44.9,190.4 57.3,189.5" fill="#f08a5d" fill-opacity="0.5" stroke="#f08a5d" stroke-opacity="0.5" stroke-width="5" stroke-linejoin="round"/>
+  <g transform="translate(176 172)">
+    <path d="M22 40 L2 14 A24 24 0 0 1 42 14 Z" fill="#e9a07a" fill-opacity="0.5"/>
+    <g stroke="#ffffff" stroke-opacity="0.75" stroke-width="1.6"><line x1="22" y1="40" x2="10" y2="6"/><line x1="22" y1="40" x2="22" y2="2"/><line x1="22" y1="40" x2="34" y2="6"/></g>
+    <rect x="16" y="38" width="12" height="6" rx="2" fill="#e9a07a" fill-opacity="0.6"/>
+  </g>
+  <g fill="none" stroke="#2fa3a3" stroke-opacity="0.45" stroke-width="3" stroke-linecap="round">
+    <path d="M96 134 q9 -7 18 0 t18 0 t18 0 t18 0"/>
+    <path d="M106 146 q9 -7 18 0 t18 0 t18 0"/>
+  </g>
+  <g fill="#c99a5b" fill-opacity="0.35"><circle cx="120" cy="60" r="1.6"/><circle cx="140" cy="220" r="1.8"/><circle cx="20" cy="128" r="1.6"/><circle cx="246" cy="128" r="1.8"/><circle cx="110" cy="252" r="1.4"/></g>
+</svg>

@@ -8,17 +8,34 @@ A tiny Jekyll site for GitHub Pages with two lists:
 
 Tap **+ New To Do**, pick **Event** or **To Do**, and fill in the details.
 
-Three themes: 🎃 Halloween (default), 🦃 Thanksgiving, and 🎄 Christmas. Tap
-the buttons at the top to switch. The site remembers your choice.
+The theme changes automatically every month:
+
+| Month | Theme |
+|---|---|
+| January | ❄️ Winter – snowflakes, icy blues |
+| February | 💖 Valentine's Day – hearts, reds and pinks |
+| March | 🐣 Baby animals – chicks, bunnies, calves |
+| April | 🌼 Texas wildflowers – bluebonnets, paintbrush, firewheels |
+| May | 🌹 May Day / International Workers' Day – roses, stars, gears, maypole |
+| June | 🏳️‍🌈 Pride – rainbows, hearts |
+| July | 🇺🇸 Summer, pool, America – fireworks, pool floats, stars |
+| August | 🏖️ Beach – umbrellas, sun, shells, starfish |
+| September | 🍂 Autumn – pumpkin spice lattes, fall leaves |
+| October | 🎃 Halloween – pumpkins, bats, ghosts |
+| November | 🦃 Thanksgiving – leaves, acorns, wheat |
+| December | 🎄 Christmas – snowflakes, trees, candy canes |
+
+To preview another month, add `?month=` and a number (1–12) to the address,
+for example `.../todo/?month=6` for June.
 
 ## Files
 
-- `_config.yml` – site title, home-screen name, and default theme
-- `index.html` – the page and the "New To Do" pop-up
+- `_config.yml` – site title and home-screen name
+- `index.html` – the page, the "New To Do" pop-up, and the month → theme list
 - `apple-touch-icon.png` – the iPhone home-screen icon (180×180)
-- `assets/app.js` – lists, sorting, check-off, and theme switching
-- `assets/style.css` – colors and layout for all three themes
-- `assets/halloween.svg`, `assets/thanksgiving.svg`, `assets/christmas.svg` – background patterns
+- `assets/app.js` – lists, sorting, and check-off
+- `assets/style.css` – colors, fonts, and layout for all 12 themes
+- `assets/*.svg` – one background pattern per month
 
 ## Publish on GitHub Pages
 
@@ -33,7 +50,6 @@ Edit `_config.yml`:
 ```yaml
 title: To-Do Lists
 short_title: Lists
-default_theme: halloween   # or thanksgiving, christmas
 ```
 
 ## Notes

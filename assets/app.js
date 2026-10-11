@@ -3,13 +3,6 @@
 
   // Keys are prefixed so they don't collide with the other sites on the same github.io domain.
   var KEY_ITEMS = "todo.items";
-  var KEY_THEME = "todo.theme";
-
-  var THEMES = {
-    halloween:    { emoji: "🎃", color: "#1b1026" },
-    thanksgiving: { emoji: "🦃", color: "#fbf1e3" },
-    christmas:    { emoji: "🎄", color: "#123a2c" }
-  };
 
   // ---------- storage helpers (fail quietly in private mode) ----------
   function load(key, fallback) {
@@ -171,32 +164,22 @@
     dlg.close();
   });
 
-  // ---------- themes ----------
-  var root = document.documentElement;
-  var themeMeta = document.querySelector('meta[name="theme-color"]');
-  var themeButtons = document.querySelectorAll("[data-theme-choice]");
+  // ---------- monthly theme ----------
+  // The theme itself is chosen in index.html (before the page draws).
+  var themeInfo = window.TODO_THEME || { theme: { emoji: "" }, month: new Date().getMonth(), forced: false };
+  document.getElementById("theme-emoji").textContent = themeInfo.theme.emoji;
+  try { localStorage.removeItem("todo.theme"); } catch (e) {}   // leftover from the old theme buttons
 
-  function applyTheme(name, remember) {
-    if (!THEMES[name]) name = "halloween";
-    root.setAttribute("data-theme", name);
-    themeMeta.setAttribute("content", THEMES[name].color);
-    document.getElementById("theme-emoji").textContent = THEMES[name].emoji;
-    themeButtons.forEach(function (b) {
-      b.setAttribute("aria-pressed", b.getAttribute("data-theme-choice") === name ? "true" : "false");
-    });
-    if (remember) save(KEY_THEME, name);
-  }
-  themeButtons.forEach(function (b) {
-    b.addEventListener("click", function () { applyTheme(b.getAttribute("data-theme-choice"), true); });
-  });
+  // If the page stays open into a new month, switch themes.
+  setInterval(function () {
+    if (!themeInfo.forced && new Date().getMonth() !== themeInfo.month) location.reload();
+  }, 60 * 1000);
 
   // Keep other open tabs in sync.
   window.addEventListener("storage", function (e) {
     if (e.key === KEY_ITEMS) { items = load(KEY_ITEMS, []); render(); }
-    if (e.key === KEY_THEME) applyTheme(load(KEY_THEME, "halloween"), false);
   });
 
   // ---------- start ----------
-  applyTheme(root.getAttribute("data-theme"), false);
   render();
 })();

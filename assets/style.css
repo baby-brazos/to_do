@@ -1,66 +1,280 @@
-/* ---------- Themes ---------- */
+/* ---------- Monthly themes (picked automatically in index.html) ---------- */
+
+/* Jan – winter, snowflakes */
+html[data-theme="winter"] {
+  color-scheme: light;
+  --bg: #e8f2fc;
+  --bg-2: #cfe2f5;
+  --title: #1f4f8f;
+  --title-font: "Snowburst One", Georgia, serif;
+  --title-size: 2.3rem;
+  --card: rgba(255,255,255,0.92);
+  --card-solid: #ffffff;
+  --text: #1d2f45;
+  --muted: #5d7189;
+  --accent: #2f6fbf;
+  --accent-text: #ffffff;
+  --highlight: #1d7fa3;
+  --border: #d3e2f1;
+  --field: #f5f9fe;
+  --danger: #c0392b;
+  --shadow: rgba(31,79,143,0.12);
+  background-image: url("winter.svg"), linear-gradient(160deg, var(--bg) 0%, var(--bg-2) 100%);
+}
+
+/* Feb – Valentine's Day */
+html[data-theme="valentine"] {
+  color-scheme: light;
+  --bg: #fff0f4;
+  --bg-2: #fbd5e1;
+  --title: #c2185b;
+  --title-font: "Pacifico", Georgia, serif;
+  --title-size: 2rem;
+  --card: rgba(255,255,255,0.92);
+  --card-solid: #ffffff;
+  --text: #4a1d2b;
+  --muted: #8c5a69;
+  --accent: #d6336c;
+  --accent-text: #ffffff;
+  --highlight: #b0123a;
+  --border: #f6d3dd;
+  --field: #fff7f9;
+  --danger: #b0123a;
+  --shadow: rgba(194,24,91,0.12);
+  background-image: url("valentine.svg"), linear-gradient(160deg, var(--bg) 0%, var(--bg-2) 100%);
+}
+
+/* Mar – baby animals */
+html[data-theme="spring"] {
+  color-scheme: light;
+  --bg: #fffbe6;
+  --bg-2: #e4f3d6;
+  --title: #4f8a3a;
+  --title-font: "Fredoka", "Avenir Next", sans-serif;
+  --title-size: 2.1rem;
+  --card: rgba(255,255,255,0.92);
+  --card-solid: #ffffff;
+  --text: #3b3a2a;
+  --muted: #7a7660;
+  --accent: #f2a516;
+  --accent-text: #3b2a0a;
+  --highlight: #4f8a3a;
+  --border: #ece6c8;
+  --field: #fffdf3;
+  --danger: #c0392b;
+  --shadow: rgba(79,138,58,0.12);
+  background-image: url("spring.svg"), linear-gradient(160deg, var(--bg) 0%, var(--bg-2) 100%);
+}
+
+/* Apr – Texas wildflowers */
+html[data-theme="wildflowers"] {
+  color-scheme: light;
+  --bg: #f4f8ee;
+  --bg-2: #e0ecd6;
+  --title: #2e4fa3;
+  --title-font: "Satisfy", Georgia, serif;
+  --title-size: 2.3rem;
+  --card: rgba(255,255,255,0.92);
+  --card-solid: #ffffff;
+  --text: #2c3327;
+  --muted: #67715f;
+  --accent: #3a5bbf;
+  --accent-text: #ffffff;
+  --highlight: #c9431f;
+  --border: #dfe8d4;
+  --field: #fafcf6;
+  --danger: #c0392b;
+  --shadow: rgba(46,79,163,0.12);
+  background-image: url("wildflowers.svg"), linear-gradient(160deg, var(--bg) 0%, var(--bg-2) 100%);
+}
+
+/* May – May Day / workers */
+html[data-theme="mayday"] {
+  color-scheme: light;
+  --bg: #fbf3e6;
+  --bg-2: #f1dfc2;
+  --title: #b3121f;
+  --title-font: "Bebas Neue", "Impact", sans-serif;
+  --title-size: 2.7rem;
+  --card: rgba(255,253,248,0.94);
+  --card-solid: #fffdf8;
+  --text: #2b1d1a;
+  --muted: #7a625a;
+  --accent: #c8102e;
+  --accent-text: #ffffff;
+  --highlight: #1f1a17;
+  --border: #ecdcc6;
+  --field: #fffaf2;
+  --danger: #b3121f;
+  --shadow: rgba(43,29,26,0.12);
+  background-image: url("mayday.svg"), linear-gradient(160deg, var(--bg) 0%, var(--bg-2) 100%);
+}
+
+/* Jun – Pride */
+html[data-theme="pride"] {
+  color-scheme: light;
+  --bg: #faf7ff;
+  --bg-2: #ece3ff;
+  --title: #7b3fd0;
+  --title-font: "Fredoka", "Avenir Next", sans-serif;
+  --title-size: 2.1rem;
+  --card: rgba(255,255,255,0.92);
+  --card-solid: #ffffff;
+  --text: #2a2340;
+  --muted: #6c6386;
+  --accent: #7b3fd0;
+  --accent-text: #ffffff;
+  --highlight: #d6336c;
+  --border: #e6defa;
+  --field: #fcfaff;
+  --danger: #c0392b;
+  --shadow: rgba(123,63,208,0.12);
+  background-image: url("pride.svg"), linear-gradient(160deg, var(--bg) 0%, var(--bg-2) 100%);
+}
+
+/* Jul – summer, pool, America */
+html[data-theme="july"] {
+  color-scheme: light;
+  --bg: #e6f5fc;
+  --bg-2: #c7e7f6;
+  --title: #1f3f7a;
+  --title-font: "Alfa Slab One", Georgia, serif;
+  --title-size: 1.9rem;
+  --card: rgba(255,255,255,0.92);
+  --card-solid: #ffffff;
+  --text: #1b2a40;
+  --muted: #5b6b80;
+  --accent: #c8313b;
+  --accent-text: #ffffff;
+  --highlight: #1f4f9a;
+  --border: #d3e6f2;
+  --field: #f6fbfe;
+  --danger: #c8313b;
+  --shadow: rgba(31,63,122,0.12);
+  background-image: url("july.svg"), linear-gradient(160deg, var(--bg) 0%, var(--bg-2) 100%);
+}
+
+/* Aug – beach */
+html[data-theme="beach"] {
+  color-scheme: light;
+  --bg: #dff4f7;
+  --bg-2: #ffe7bf;
+  --title: #0f7b7b;
+  --title-font: "Shrikhand", Georgia, serif;
+  --title-size: 1.9rem;
+  --card: rgba(255,255,255,0.92);
+  --card-solid: #ffffff;
+  --text: #2d3a3a;
+  --muted: #6a7a76;
+  --accent: #ef5b3f;
+  --accent-text: #ffffff;
+  --highlight: #0f7b7b;
+  --border: #f1e2c8;
+  --field: #fffcf5;
+  --danger: #c0392b;
+  --shadow: rgba(15,123,123,0.12);
+  background-image: url("beach.svg"), linear-gradient(160deg, var(--bg) 0%, var(--bg-2) 100%);
+}
+
+/* Sep – autumn, pumpkin spice */
+html[data-theme="autumn"] {
+  color-scheme: light;
+  --bg: #f8eee2;
+  --bg-2: #ecd4b6;
+  --title: #8b3f1a;
+  --title-font: "Caveat Brush", Georgia, serif;
+  --title-size: 2.4rem;
+  --card: rgba(255,251,245,0.93);
+  --card-solid: #fffbf5;
+  --text: #3f2a1c;
+  --muted: #826753;
+  --accent: #b4581f;
+  --accent-text: #ffffff;
+  --highlight: #8a5a1c;
+  --border: #ead9c3;
+  --field: #fffaf3;
+  --danger: #b33a2a;
+  --shadow: rgba(63,42,28,0.12);
+  background-image: url("autumn.svg"), linear-gradient(160deg, var(--bg) 0%, var(--bg-2) 100%);
+}
+
+/* Oct – Halloween */
 html[data-theme="halloween"] {
   color-scheme: dark;
-  --bg: #1b1026;           /* midnight purple */
+  --bg: #1b1026;
   --bg-2: #2c1238;
-  --title: #ff8c2e;        /* pumpkin orange */
+  --title: #ff8c2e;
   --title-font: "Creepster", "Chalkduster", fantasy;
   --title-size: 2.2rem;
-  --card: rgba(38, 22, 52, 0.92);
+  --card: rgba(38,22,52,0.92);
   --card-solid: #261634;
   --text: #f7eadb;
   --muted: #b9a3c4;
-  --accent: #ff7a1a;       /* buttons, checkboxes */
+  --accent: #ff7a1a;
   --accent-text: #1b1026;
-  --highlight: #a8e05f;    /* slime green event times */
+  --highlight: #a8e05f;
   --border: #4a2e5c;
   --field: #1f1229;
   --danger: #ff6b6b;
-  --shadow: rgba(0, 0, 0, 0.35);
+  --shadow: rgba(0,0,0,0.35);
   background-image: url("halloween.svg"), linear-gradient(160deg, var(--bg) 0%, var(--bg-2) 100%);
 }
 
+/* Nov – Thanksgiving */
 html[data-theme="thanksgiving"] {
   color-scheme: light;
-  --bg: #fbf1e3;           /* cream */
-  --bg-2: #f6dcc0;         /* soft peach */
-  --title: #a3461a;        /* rust */
+  --bg: #fbf1e3;
+  --bg-2: #f6dcc0;
+  --title: #a3461a;
   --title-font: "Lobster", Georgia, serif;
   --title-size: 2rem;
-  --card: rgba(255, 252, 246, 0.92);
+  --card: rgba(255,252,246,0.92);
   --card-solid: #fffcf6;
   --text: #4a2c17;
   --muted: #8a6a52;
-  --accent: #c4561d;       /* pumpkin rust */
+  --accent: #c4561d;
   --accent-text: #ffffff;
-  --highlight: #9a6a12;    /* harvest gold */
+  --highlight: #9a6a12;
   --border: #ead6bd;
   --field: #fff8ee;
   --danger: #b33a2a;
-  --shadow: rgba(74, 44, 23, 0.10);
+  --shadow: rgba(74,44,23,0.10);
   background-image: url("thanksgiving.svg"), linear-gradient(160deg, var(--bg) 0%, var(--bg-2) 100%);
 }
 
+/* Dec – Christmas */
 html[data-theme="christmas"] {
   color-scheme: light;
-  --bg: #143f30;           /* evergreen */
+  --bg: #143f30;
   --bg-2: #0c2a20;
   --title: #fdf3e1;
   --title-font: "Mountains of Christmas", Georgia, serif;
   --title-size: 2.2rem;
-  --card: rgba(255, 250, 242, 0.95);
+  --card: rgba(255,250,242,0.95);
   --card-solid: #fffaf2;
   --text: #23302a;
   --muted: #6b7a72;
-  --accent: #c8313b;       /* berry red */
+  --accent: #c8313b;
   --accent-text: #ffffff;
-  --highlight: #1f7a4d;    /* holly green */
+  --highlight: #1f7a4d;
   --border: #e6dccb;
   --field: #fffdf8;
   --danger: #c8313b;
-  --shadow: rgba(0, 0, 0, 0.25);
+  --shadow: rgba(0,0,0,0.25);
   background-image: url("christmas.svg"), linear-gradient(160deg, var(--bg) 0%, var(--bg-2) 100%);
 }
+
+/* Rainbow title for June */
+html[data-theme="pride"] .title-text {
+  background: linear-gradient(90deg, #e40303, #ff8c00, #e8b400, #008026, #004dff, #750787);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+html[data-theme="mayday"] h1 { letter-spacing: .02em; }
+/* March's sunny yellow is too light for text on white, so headings and checkbox outlines use the darker shades */
+html[data-theme="spring"] h2 { color: var(--highlight); }
+html[data-theme="spring"] input[type="checkbox"] { border-color: #d48c00; }
 
 /* ---------- Base ---------- */
 * { box-sizing: border-box; }
@@ -100,7 +314,9 @@ h1 {
   line-height: 1.1;
   color: var(--title);
 }
-html[data-theme="christmas"] h1 { font-weight: 700; }
+html[data-theme="christmas"] h1,
+html[data-theme="spring"] h1,
+html[data-theme="pride"] h1 { font-weight: 700; }
 
 h2 {
   font-size: 1rem;
@@ -111,21 +327,6 @@ h2 {
   letter-spacing: .05em;
 }
 .count { color: var(--muted); font-weight: 600; }
-
-/* Theme switcher */
-.theme-switch { display: flex; gap: 8px; }
-.theme-switch button {
-  width: 42px;
-  height: 42px;
-  padding: 0;
-  border-radius: 50%;
-  background: var(--card);
-  border: 2px solid transparent;
-  font-size: 20px;
-  line-height: 1;
-  box-shadow: 0 2px 8px var(--shadow);
-}
-.theme-switch button[aria-pressed="true"] { border-color: var(--accent); }
 
 /* Cards */
 .card {
