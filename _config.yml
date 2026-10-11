@@ -1,0 +1,10 @@
+title: To-Do Lists
+short_title: Lists        # name under the home-screen icon
+description: Events and to-dos
+lang: en
+
+# Theme used the first time the site opens: halloween, thanksgiving, or christmas
+default_theme: halloween
+
+exclude:
+  - README.md

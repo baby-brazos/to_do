@@ -1,0 +1,307 @@
+/* ---------- Themes ---------- */
+html[data-theme="halloween"] {
+  color-scheme: dark;
+  --bg: #1b1026;           /* midnight purple */
+  --bg-2: #2c1238;
+  --title: #ff8c2e;        /* pumpkin orange */
+  --title-font: "Creepster", "Chalkduster", fantasy;
+  --title-size: 2.2rem;
+  --card: rgba(38, 22, 52, 0.92);
+  --card-solid: #261634;
+  --text: #f7eadb;
+  --muted: #b9a3c4;
+  --accent: #ff7a1a;       /* buttons, checkboxes */
+  --accent-text: #1b1026;
+  --highlight: #a8e05f;    /* slime green event times */
+  --border: #4a2e5c;
+  --field: #1f1229;
+  --danger: #ff6b6b;
+  --shadow: rgba(0, 0, 0, 0.35);
+  background-image: url("halloween.svg"), linear-gradient(160deg, var(--bg) 0%, var(--bg-2) 100%);
+}
+
+html[data-theme="thanksgiving"] {
+  color-scheme: light;
+  --bg: #fbf1e3;           /* cream */
+  --bg-2: #f6dcc0;         /* soft peach */
+  --title: #a3461a;        /* rust */
+  --title-font: "Lobster", Georgia, serif;
+  --title-size: 2rem;
+  --card: rgba(255, 252, 246, 0.92);
+  --card-solid: #fffcf6;
+  --text: #4a2c17;
+  --muted: #8a6a52;
+  --accent: #c4561d;       /* pumpkin rust */
+  --accent-text: #ffffff;
+  --highlight: #9a6a12;    /* harvest gold */
+  --border: #ead6bd;
+  --field: #fff8ee;
+  --danger: #b33a2a;
+  --shadow: rgba(74, 44, 23, 0.10);
+  background-image: url("thanksgiving.svg"), linear-gradient(160deg, var(--bg) 0%, var(--bg-2) 100%);
+}
+
+html[data-theme="christmas"] {
+  color-scheme: light;
+  --bg: #143f30;           /* evergreen */
+  --bg-2: #0c2a20;
+  --title: #fdf3e1;
+  --title-font: "Mountains of Christmas", Georgia, serif;
+  --title-size: 2.2rem;
+  --card: rgba(255, 250, 242, 0.95);
+  --card-solid: #fffaf2;
+  --text: #23302a;
+  --muted: #6b7a72;
+  --accent: #c8313b;       /* berry red */
+  --accent-text: #ffffff;
+  --highlight: #1f7a4d;    /* holly green */
+  --border: #e6dccb;
+  --field: #fffdf8;
+  --danger: #c8313b;
+  --shadow: rgba(0, 0, 0, 0.25);
+  background-image: url("christmas.svg"), linear-gradient(160deg, var(--bg) 0%, var(--bg-2) 100%);
+}
+
+/* ---------- Base ---------- */
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+  min-height: 100%;
+  background-color: var(--bg);
+  background-size: 260px 260px, 100% 100%;
+}
+body {
+  margin: 0;
+  color: var(--text);
+  background: transparent;
+  font: 17px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.screen {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 24px 16px 56px;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+h1 {
+  margin: 0;
+  font-family: var(--title-font);
+  font-weight: 400;
+  font-size: var(--title-size);
+  line-height: 1.1;
+  color: var(--title);
+}
+html[data-theme="christmas"] h1 { font-weight: 700; }
+
+h2 {
+  font-size: 1rem;
+  margin: 0 0 8px;
+  color: var(--accent);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+}
+.count { color: var(--muted); font-weight: 600; }
+
+/* Theme switcher */
+.theme-switch { display: flex; gap: 8px; }
+.theme-switch button {
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  border-radius: 50%;
+  background: var(--card);
+  border: 2px solid transparent;
+  font-size: 20px;
+  line-height: 1;
+  box-shadow: 0 2px 8px var(--shadow);
+}
+.theme-switch button[aria-pressed="true"] { border-color: var(--accent); }
+
+/* Cards */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  padding: 18px;
+  margin-top: 16px;
+  box-shadow: 0 4px 14px var(--shadow);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+}
+
+/* Buttons */
+button {
+  font: inherit;
+  font-weight: 600;
+  padding: 12px 16px;
+  border-radius: 12px;
+  border: 0;
+  background: var(--accent);
+  color: var(--accent-text);
+  cursor: pointer;
+}
+.new-btn {
+  display: block;
+  width: 100%;
+  margin-top: 20px;
+  padding: 15px;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 14px var(--shadow);
+}
+button.ghost {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+button.link {
+  background: none;
+  color: var(--muted);
+  padding: 8px 0 0;
+  font-weight: 500;
+}
+button.del {
+  flex-shrink: 0;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--muted);
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+/* Lists */
+ul { list-style: none; margin: 0; padding: 0; }
+li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border);
+}
+li:last-child { border-bottom: 0; }
+.empty { margin: 4px 0 0; color: var(--muted); }
+
+li.event { align-items: flex-start; }
+.when {
+  flex-shrink: 0;
+  min-width: 5.2em;
+  padding-top: 1px;
+  font-weight: 700;
+  color: var(--highlight);
+  font-variant-numeric: tabular-nums;
+}
+.what { flex: 1; min-width: 0; }
+.what .title { display: block; overflow-wrap: anywhere; }
+.where {
+  display: block;
+  padding-left: 1.35em;
+  text-indent: -1.35em;   /* wrapped lines line up after the pin */
+  font-size: .9rem;
+  color: var(--muted);
+  overflow-wrap: anywhere;
+}
+li.event .del { margin-top: -5px; }
+
+li.todo label {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+}
+li.todo .title { overflow-wrap: anywhere; }
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  appearance: none;
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  margin: 0;
+  border: 2px solid var(--accent);
+  border-radius: 8px;
+  background: var(--field);
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+}
+input[type="checkbox"]:checked { background: var(--accent); }
+input[type="checkbox"]:checked::after {
+  content: "✓";
+  color: var(--accent-text);
+  font-size: 17px;
+  font-weight: 800;
+  line-height: 1;
+}
+li.done .title { text-decoration: line-through; color: var(--muted); }
+
+/* Form fields */
+label { display: block; font-weight: 600; margin-bottom: 6px; }
+label.spaced { margin-top: 12px; }
+input[type="text"], input[type="time"] {
+  display: block;
+  width: 100%;
+  min-height: 48px;
+  font: inherit;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--field);
+  color: var(--text);
+  -webkit-appearance: none;
+  appearance: none;
+}
+input:focus-visible, button:focus-visible {
+  outline: 3px solid var(--highlight);
+  outline-offset: 2px;
+}
+
+/* Pop-up */
+dialog {
+  width: min(420px, calc(100% - 32px));
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background: var(--card-solid);
+  color: var(--text);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+}
+dialog::backdrop { background: rgba(10, 5, 15, 0.55); }
+.dialog-body { display: grid; gap: 16px; padding: 20px; }
+.dialog-body h3 { margin: 0; font-size: 1.2rem; }
+
+.segmented {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+  padding: 4px;
+  border-radius: 14px;
+  background: var(--field);
+  border: 1px solid var(--border);
+}
+.segmented button {
+  background: transparent;
+  color: var(--text);
+  padding: 10px;
+  border-radius: 10px;
+}
+.segmented button[aria-checked="true"] {
+  background: var(--accent);
+  color: var(--accent-text);
+}
+
+.actions { display: flex; gap: 10px; }
+.actions button { flex: 1; }

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="260" height="260" viewBox="0 0 260 260">
+  <polygon transform="translate(52 56) rotate(-15)" points="0,-32 5,-19 13,-25 12,-11 25,-15 21,-3 30,1 15,7 17,16 4,12 1.5,14 1.5,30 -1.5,30 -1.5,14 -4,12 -17,16 -15,7 -30,1 -21,-3 -25,-15 -12,-11 -13,-25 -5,-19 0,-32" fill="#c4561d" fill-opacity="0.32"/>
+  <polygon transform="translate(196 196) rotate(20) scale(0.8)" points="0,-32 5,-19 13,-25 12,-11 25,-15 21,-3 30,1 15,7 17,16 4,12 1.5,14 1.5,30 -1.5,30 -1.5,14 -4,12 -17,16 -15,7 -30,1 -21,-3 -25,-15 -12,-11 -13,-25 -5,-19 0,-32" fill="#d99a2b" fill-opacity="0.34"/>
+  <g transform="translate(176 40) rotate(35)" fill="#e07a2e" fill-opacity="0.3">
+    <path d="M0 0 C10 -16 32 -16 44 0 C32 16 10 16 0 0 Z"/>
+    <path d="M0 0 L44 0" stroke="#fbf1e3" stroke-opacity="0.8" stroke-width="1.5"/>
+  </g>
+  <g transform="translate(104 128) rotate(-40)" fill="#b8452a" fill-opacity="0.26">
+    <path d="M0 0 C8 -12 24 -12 32 0 C24 12 8 12 0 0 Z"/>
+  </g>
+  <g transform="translate(120 34)" fill-opacity="0.36">
+    <ellipse cx="14" cy="22" rx="11" ry="13" fill="#a0612b"/>
+    <path d="M0 14 C0 4 28 4 28 14 C20 17 8 17 0 14 Z" fill="#6e4320"/>
+    <rect x="12.5" y="2" width="3" height="6" rx="1.5" fill="#6e4320"/>
+  </g>
+  <g transform="translate(30 132) rotate(-20)" fill-opacity="0.3">
+    <ellipse cx="14" cy="22" rx="11" ry="13" fill="#a0612b"/>
+    <path d="M0 14 C0 4 28 4 28 14 C20 17 8 17 0 14 Z" fill="#6e4320"/>
+  </g>
+  <g transform="translate(96 250) rotate(12)" fill="#c9952e" fill-opacity="0.38">
+    <path d="M0 0 L0 -70" stroke="#c9952e" stroke-opacity="0.38" stroke-width="2.5"/>
+    <ellipse cx="-6" cy="-9" rx="4" ry="7" transform="rotate(-30 -6 -9)"/><ellipse cx="6" cy="-18" rx="4" ry="7" transform="rotate(30 6 -18)"/><ellipse cx="-6" cy="-27" rx="4" ry="7" transform="rotate(-30 -6 -27)"/><ellipse cx="6" cy="-36" rx="4" ry="7" transform="rotate(30 6 -36)"/><ellipse cx="-6" cy="-45" rx="4" ry="7" transform="rotate(-30 -6 -45)"/><ellipse cx="6" cy="-54" rx="4" ry="7" transform="rotate(30 6 -54)"/>
+    <ellipse cx="0" cy="-66" rx="3.5" ry="7"/>
+  </g>
+  <g fill="#c4561d" fill-opacity="0.25"><circle cx="236" cy="120" r="2.2"/><circle cx="20" cy="232" r="2"/><circle cx="160" cy="100" r="1.8"/><circle cx="240" cy="250" r="1.6"/></g>
+</svg>

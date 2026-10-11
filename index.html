@@ -1,0 +1,86 @@
+---
+layout: null
+---
+<!doctype html>
+<html lang="{{ site.lang }}" data-theme="{{ site.default_theme | default: 'halloween' }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#1b1026">
+  <title>{{ site.title }}</title>
+  <meta name="apple-mobile-web-app-title" content="{{ site.short_title | default: site.title }}">
+  <link rel="apple-touch-icon" href="{{ '/apple-touch-icon.png' | relative_url }}?v={{ site.time | date: '%s' }}">
+  <link rel="icon" type="image/png" href="{{ '/apple-touch-icon.png' | relative_url }}">
+  <script>
+    // Apply the saved theme before the page draws, so it doesn't flash.
+    try {
+      var t = JSON.parse(localStorage.getItem("todo.theme"));
+      if (t) document.documentElement.setAttribute("data-theme", t);
+    } catch (e) {}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Creepster&family=Lobster&family=Mountains+of+Christmas:wght@700&display=swap">
+  <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}?v={{ site.time | date: '%s' }}">
+</head>
+<body>
+
+  <main class="screen">
+    <header>
+      <h1><span id="theme-emoji">🎃</span> {{ site.title }}</h1>
+      <div class="theme-switch" role="group" aria-label="Theme">
+        <button type="button" data-theme-choice="halloween" aria-label="Halloween theme" aria-pressed="false">🎃</button>
+        <button type="button" data-theme-choice="thanksgiving" aria-label="Thanksgiving theme" aria-pressed="false">🦃</button>
+        <button type="button" data-theme-choice="christmas" aria-label="Christmas theme" aria-pressed="false">🎄</button>
+      </div>
+    </header>
+
+    <button type="button" id="new-btn" class="new-btn">+ New To Do</button>
+
+    <section class="card">
+      <h2>Events</h2>
+      <ul id="events"></ul>
+      <p id="events-empty" class="empty">No events yet.</p>
+    </section>
+
+    <section class="card">
+      <h2>To Do <span id="todo-count" class="count"></span></h2>
+      <ul id="todos"></ul>
+      <p id="todos-empty" class="empty">Nothing to do.</p>
+      <button type="button" id="clear-done" class="link" hidden>Clear checked items</button>
+    </section>
+  </main>
+
+  <!-- "New To Do" pop-up -->
+  <dialog id="new-dialog" aria-labelledby="new-title">
+    <form id="new-form" class="dialog-body" autocomplete="off">
+      <h3 id="new-title">New item</h3>
+
+      <div class="segmented" role="radiogroup" aria-label="Type">
+        <button type="button" role="radio" data-kind="event" aria-checked="false">Event</button>
+        <button type="button" role="radio" data-kind="todo" aria-checked="true">To Do</button>
+      </div>
+
+      <div>
+        <label for="item-text">What</label>
+        <input id="item-text" type="text" required placeholder="Pick up diapers">
+      </div>
+
+      <div id="event-fields" hidden>
+        <label for="item-time">Time</label>
+        <input id="item-time" type="time">
+        <label for="item-location" class="spaced">Location</label>
+        <input id="item-location" type="text" placeholder="Optional">
+      </div>
+
+      <div class="actions">
+        <button type="button" id="cancel-btn" class="ghost">Cancel</button>
+        <button type="submit">Add</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script src="{{ '/assets/app.js' | relative_url }}?v={{ site.time | date: '%s' }}"></script>
+</body>
+</html>
